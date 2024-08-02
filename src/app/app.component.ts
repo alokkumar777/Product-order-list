@@ -1,13 +1,17 @@
-import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+// src/app/app.component.ts
 
+// Import necessary Angular components
+import { Component } from '@angular/core';
+import { ProductOrderComponent } from './product-order/product-order.component';
+
+// Define the root component
 @Component({
-  selector: 'app-root',
-  standalone: true,
-  imports: [RouterOutlet],
-  templateUrl: './app.component.html',
-  styleUrl: './app.component.css'
+  selector: 'app-root', // Selector for the root component
+  standalone: true, // Indicates that this component is standalone
+  imports: [ProductOrderComponent], // Import the ProductOrderComponent
+  template: `
+    <!-- Template for the root component -->
+    <app-product-order></app-product-order>
+  `,
 })
-export class AppComponent {
-  title = 'product-list-app';
-}
+export class AppComponent {}

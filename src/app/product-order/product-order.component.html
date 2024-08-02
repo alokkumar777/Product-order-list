@@ -1,0 +1,39 @@
+<div class="product-order-container">
+  <!-- Section heading -->
+  <h2>Product Order</h2>
+
+  <!-- Loop through orderItems and create a form for each item -->
+  <div *ngFor="let item of orderItems; let i = index" class="order-item">
+    <!-- Dropdown to select product -->
+    <select [(ngModel)]="item.product">
+      <option value="">Select a product</option>
+      <!-- Iterate through products and create options -->
+      <option *ngFor="let product of products" [value]="product">
+        {{ product }}
+      </option>
+    </select>
+
+    <!-- Dropdown to select quantity -->
+    <select [(ngModel)]="item.quantity">
+      <!-- Iterate through quantities and create options -->
+      <option *ngFor="let quantity of quantities" [value]="quantity">
+        {{ quantity }}
+      </option>
+    </select>
+  </div>
+
+  <!-- Button to add a new order item -->
+  <button class="add-item-btn" (click)="addItem()">Add Item</button>
+
+  <!-- Button to display the order -->
+  <button class="show-order-btn" (click)="showOrder()">Show Order</button>
+
+  <!-- Button to read the order out loud -->
+  <button class="read-order-btn" (click)="readOrder()">Read Order</button>
+
+  <!-- Display the order list if showOrderList is true -->
+  <app-order-display
+    *ngIf="showOrderList"
+    [orderItems]="orderItems"
+  ></app-order-display>
+</div>

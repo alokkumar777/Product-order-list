@@ -1,0 +1,15 @@
+<!-- src/app/order-display/order-display.component.html -->
+
+<div class="order-display">
+  <div class="order-header">
+    <h2>Your Order</h2>
+    <span class="quantity-label">Quantity</span>
+  </div>
+  <ul class="order-list">
+    <!-- Loop through orderItems array and display each item -->
+    <li *ngFor="let item of orderItems" class="order-item">
+      <span class="product">{{ item.product }}</span>
+      <span class="quantity">{{ item.quantity }}</span>
+    </li>
+  </ul>
+</div>
