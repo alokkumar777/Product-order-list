@@ -31,7 +31,7 @@ export class TextToSpeechService {
     const body = new URLSearchParams({
       src: text, // Text to convert
       hl: 'en-us', // Language
-      r: '0', // Rate of speech
+      r: '1.5', // Rate of speech
       c: 'mp3', // Audio codec
       f: '8khz_8bit_mono', // Audio format
     });
